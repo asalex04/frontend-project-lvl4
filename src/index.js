@@ -1,5 +1,4 @@
 // @ts-check
-// @ts-ignore
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -18,7 +17,7 @@ p.textContent = 'It works!';
 
 const h5 = document.createElement('h5');
 h5.classList.add('card-title');
-h5.textContent = 'Project frontend l4 boilerplate';
+h5.textContent = 'Project frontend l4 ';
 
 const cardBody = document.createElement('div');
 cardBody.classList.add('card-body');
