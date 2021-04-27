@@ -4,14 +4,15 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
 import '../assets/application.scss';
-
 import gon from 'gon';
+import run from './init';
 
 if (process.env.NODE_ENV !== 'production') {
   localStorage.debug = 'chat:*';
 }
 
-const p = document.createElement('p');
+run();
+/* const p = document.createElement('p');
 p.classList.add('card-text');
 p.textContent = 'It works!';
 
@@ -31,4 +32,4 @@ const container = document.querySelector('#chat');
 container.append(card);
 
 console.log('it works!');
-console.log('gon', gon);
+console.log('gon', gon); */
