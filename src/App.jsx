@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Link, BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-import Channels from './components/Channels';
-import Form from './components/Form';
+import Channels from './components/Channels.jsx';
+import Form from './components/Form.jsx';
 
 const NoMatchPage = () => (<h3>404 - Not found</h3>);
 

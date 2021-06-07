@@ -5,11 +5,7 @@ import {
   Dropdown,
   Button,
 } from 'react-bootstrap';
-import classNames from 'classnames';
 
-const bildButton = () => {
-  
-}
 const Channels = () => {
   const divStyle = {
     position: 'absolute',

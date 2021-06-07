@@ -1,11 +1,11 @@
 // @ts-check
 
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import 'core-js';
+import 'regenerator-runtime';
 
 import '../assets/application.scss';
 // import gon from 'gon';
-import run from './init';
+import run from './init.jsx';
 
 if (process.env.NODE_ENV !== 'production') {
   localStorage.debug = 'chat:*';
