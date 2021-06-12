@@ -22,7 +22,7 @@ const App = () => {
             </Nav>
           </Navbar>
         </Container>
-        <Container className="pt-5">
+        <Container>
           <Switch>
             <Route exact path="/" component={Channels} />
             <Route path="/login" component={Form} />
