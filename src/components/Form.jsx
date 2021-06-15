@@ -1,48 +1,44 @@
 import React from 'react';
 import * as Yup from 'yup';
-import { Formik, Form } from 'formik';
+import { useFormik } from 'formik';
+import { Button, Form, Row, Card } from 'react-bootstrap';
 
-const Basic = () => (
-  <div>
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-      }}
-      validationSchema={Yup.object().shape({
-        nickName: Yup.string()
-          .required('Nickname is required'),
-        lastName: Yup.string()
-          .min(6, 'Must be longer than 6 characters')
-          .required('Required'),
-      })}
-    >
-      <div className="container-fluid">
-        <div className="row justify-content-center pt-5">
-          <div className="col-sm-4">
-            <Form>
-              <form className="p-3">
-                <div className="form-group">
-                  <label className="form-label" htmlFor="username">Ваш ник</label>
-                  <input name="username" autoComplete="username" required="" id="username" className="form-control" value="" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="password">Пароль</label>
-                  <input name="password" autoComplete="current-password" required="" type="password" id="password" className="form-control" value="" />
-                  <div className="invalid-feedback">Неверные имя пользователя или пароль</div>
-                </div>
-                <button type="submit" className="w-100 mb-3 btn btn-outline-primary">Войти</button>
-                <div className="d-flex flex-column align-items-center">
-                  <span className="small mb-2">Нет аккаунта?</span>
-                  <a href="/signup">Регистрация</a>
-                </div>
-              </form>
-            </Form>
-          </div>
-        </div>
-      </div>
-    </Formik>
-  </div>
-);
-
+const Basic = () => {
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      username: Yup.string()
+        .max(15, 'Must be 15 characters or less')
+        .required('Nickname is required'),
+      password: Yup.string()
+        .min(6, 'Must be longer than 6 characters')
+        .required('Required'),
+    }),
+  });
+  return (
+    <Form>
+      <Row className="justify-content-center pt-5">
+        <Card style={{ width: '20rem', background: 'grey' }}>
+          <Card.Body>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" placeholder="Enter username" />
+              <Form.Text className="text-muted" />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Sign in
+            </Button>
+          </Card.Body>
+        </Card>
+      </Row>
+    </Form>
+  );
+};
 export default Basic;

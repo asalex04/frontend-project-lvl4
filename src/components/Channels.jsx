@@ -12,19 +12,28 @@ const Channels = () => {
     opacity: 0,
     pointerEvents: 'none',
   };
+
+  const addChannel = (e) => {
+    e.preventDefault();
+    alert('канал');
+  };
+
   return (
     <Container className="flex-grow-1 my-4 overflow-hidden rounded shadow">
       <Row className="h-100 bg-white">
         <Col className="col-2 px-0 pt-5 border-end bg-light">
           <div className="d-flex justify-content-between mb-2 px-4">
             <span>Каналы</span>
-            <button type="button" className="ml-auto p-0 btn btn-link">+</button>
+            <button type="button" className="ml-auto p-0 btn btn-link" onClick={addChannel}>+</button>
           </div>
           <ul className="nav flex-column nav-pills nav-fill">
             <ButtonGroup vertical>
-              <Button className="nav-link btn-block mb-2 text-left btn btn-primary">general</Button>
-              <Button className="nav-link btn-block mb-2 text-left btn btn-light">random</Button>
-            </ButtonGroup>
+              <li className="nav-item">
+                <button type="button" className="w-100 px-4 text-left btn">general</button>
+              </li>
+              <li className="nav-item">
+                <button type="button" className="w-100 px-4 text-left btn btn-secondary">random</button>
+              </li>
             <li className="nav-item">
               <div role="group" className="d-flex mb-2 dropdown btn-group">
                 <button type="button" className="text-left flex-grow-1 nav-link btn btn-light">ooo</button>
@@ -35,12 +44,11 @@ const Channels = () => {
                 </div>
               </div>
             </li>
+            </ButtonGroup>
           </ul>
         </Col>
         <Col className="col d-flex flex-column h-100">
-          <Row className="bg-light mb-4 p-3 shadow-sm small">
-            rrr
-          </Row>
+          <Row className="bg-light mb-4 p-3 shadow-sm small" />
           <Row id="messages-box" className="chat-messages overflow-auto mb-3 p-3" />
           <Row className="border-top mt-auto py-3 px-3">
             <Col>

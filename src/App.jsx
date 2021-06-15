@@ -3,19 +3,29 @@ import {
   Link, BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
 import {
-  Button, Navbar, Nav, Container,
+  Button, Navbar, Nav, Container, Col, Row,
 } from 'react-bootstrap';
 import Channels from './components/Channels.jsx';
 import Form from './components/Form.jsx';
 
-const NoMatchPage = () => { <h3>404 - Not found</h3>; };
+const NoMatchPage = () => {
+  return (
+    <Container>
+      <Row className="justify-content-md-center">
+        <Col md="auto" className="pt-5">
+          <h3>404 - Not found</h3>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
 const App = () => {
   return (
     <>
       <Router>
         <Container>
-          <Navbar bg="dark" variant="dark" expand="true" gy-5>
+          <Navbar bg="dark" variant="dark" expand="true">
             <Navbar.Brand as={Link} to="/">Hexlet Chat</Navbar.Brand>
             <Nav className="justify-content-end">
               <Button variant="primary">Выйти</Button>
