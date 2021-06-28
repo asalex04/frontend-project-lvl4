@@ -1,7 +1,9 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { Button, Form, Row, Card } from 'react-bootstrap';
+import {
+  Button, Form, Row, Card
+} from 'react-bootstrap';
 
 const Basic = () => {
   const formik = useFormik({
